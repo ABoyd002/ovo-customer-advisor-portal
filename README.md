@@ -1,6 +1,6 @@
-# OVO Customer Advisor Portal **(UNOFICIAL)**
+# OVO Customer Advisor Portal **(UNOFFICIAL)**
 
-**DISCLAIMER**: _This is a small project to I am working on to make my life easier in my day job. Please DO NOT take any of the information here as oficial advice on how to fix/repair a boiler. This project is also not mintained or endorced by [OVO Energy Ltd](https://ovoenergy.com)._
+**DISCLAIMER**: _This is a small project to I am working on to make my life easier in my day job. Please DO NOT take any of the information here as official advice on how to fix/repair a boiler. This project is also not mintained or endorced by [OVO Energy Ltd](https://ovoenergy.com)._
 
 ---
 
