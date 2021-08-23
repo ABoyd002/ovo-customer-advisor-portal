@@ -1,16 +1,16 @@
-export default {
+module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'OVO Phone Fix',
+    title: "OVO Phone Fix",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -23,15 +23,39 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    "@nuxtjs/eslint-module",
+    "@nuxtjs/vuetify",
+    "@nuxtjs/content",
+    "vue-plausible",
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/vuetify', '@nuxtjs/content'],
+  modules: [],
 
-  vuetify: {},
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: "#169939",
+        },
+      },
+    },
+  },
 
   content: {},
 
+  plausible: {
+    trackLocalhost: true,
+  },
+
+  publicRuntimeConfig: {
+    plausible: {
+      domain: process.env.PLAUSIBLE_DOMAIN,
+      apiHost: process.env.PLAUSIBLE_API_HOST,
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
 };

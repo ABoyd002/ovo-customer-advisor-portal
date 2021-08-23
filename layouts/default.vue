@@ -1,62 +1,56 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <v-app>
+    <v-app-bar app dark color="primary">
+      <v-toolbar-title>
+        <nuxt-link to="/" class="white--text text-decoration-none">
+          OVO Advisor Center
+        </nuxt-link>
+      </v-toolbar-title>
+    </v-app-bar>
+
+    <v-navigation-drawer
+      app
+      value="true"
+      color="primary lighten-4"
+      expand-on-hover
+    >
+      <v-list nav>
+        <v-list-item
+          v-for="(item, i) in links"
+          :key="`link-${i}`"
+          :to="item.link"
+        >
+          <v-list-item-icon>
+            <v-icon v-text="item.icon" />
+          </v-list-item-icon>
+          <v-list-item-title>{{ item.name }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-main>
+      <Nuxt />
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          name: "Home",
+          link: "/",
+          icon: "mdi-home",
+        },
+        {
+          name: "Phone Fixes",
+          link: "/phone-fix",
+          icon: "mdi-phone",
+        },
+      ],
+    };
+  },
+};
+</script>
